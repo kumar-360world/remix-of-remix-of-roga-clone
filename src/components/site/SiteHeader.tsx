@@ -19,7 +19,7 @@ export function SiteHeader() {
       <div className="container-page">
         <div className="flex items-center justify-between rounded-full border border-border/60 bg-background/80 px-5 py-3 shadow-sm backdrop-blur-xl">
           <Link to="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-            <img src={LOGO} alt="Roga logo" className="h-7 w-auto" />
+            <img src={LOGO} alt="Roga logo" className="h-7 w-auto brightness-0" />
           </Link>
 
           <nav className="hidden items-center gap-8 md:flex">
