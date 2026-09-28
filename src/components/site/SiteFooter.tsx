@@ -18,7 +18,7 @@ export function SiteFooter() {
       <div className="container-page py-16">
         <div className="grid gap-12 md:grid-cols-[1.2fr_1fr_1fr_1fr]">
           <div>
-            <img src={LOGO} alt="Roga logo" className="h-8 w-auto" />
+            <img src={LOGO} alt="Roga logo" className="h-8 w-auto brightness-0" />
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               A new generation of Vagus Nerve Stimulation to help you reduce stress and embrace a
               calmer life.
