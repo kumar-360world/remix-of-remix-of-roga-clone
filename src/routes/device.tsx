@@ -73,6 +73,11 @@ function DevicePage() {
               See the science
             </Link>
           </div>
+          <div className="mt-3">
+            <button type="button" className="btn-base btn-outline hover:bg-muted">
+              See it live
+            </button>
+          </div>
         </div>
         <img
           src={IMG.spinningDevice}
