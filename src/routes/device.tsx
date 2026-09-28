@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { SeeLiveViewer } from "@/components/site/SeeLiveViewer";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -51,6 +53,7 @@ const FAQ = [
 ];
 
 function DevicePage() {
+  const [liveOpen, setLiveOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       <SiteHeader />
@@ -74,10 +77,19 @@ function DevicePage() {
             </Link>
           </div>
           <div className="mt-3">
-            <button type="button" className="btn-base btn-outline hover:bg-muted">
+            <button
+              type="button"
+              onClick={() => setLiveOpen(true)}
+              className="btn-base btn-outline hover:bg-muted"
+            >
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-destructive" />
+              </span>
               See it live
             </button>
           </div>
+          <SeeLiveViewer open={liveOpen} onClose={() => setLiveOpen(false)} />
         </div>
         <img
           src={IMG.spinningDevice}
