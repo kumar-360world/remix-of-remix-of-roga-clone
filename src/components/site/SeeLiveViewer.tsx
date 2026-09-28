@@ -62,10 +62,9 @@ export function SeeLiveViewer({ open, onClose }: { open: boolean; onClose: () =>
   }, [open]);
 
   useEffect(() => {
-    if (state === "ended") {
-      const t = setTimeout(onClose, 2500);
-      return () => clearTimeout(t);
-    }
+    if (state !== "ended") return undefined;
+    const t = setTimeout(onClose, 2500);
+    return () => clearTimeout(t);
   }, [state, onClose]);
 
   if (!open || typeof document === "undefined") return null;
